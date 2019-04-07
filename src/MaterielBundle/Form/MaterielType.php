@@ -16,14 +16,7 @@ class MaterielType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('typetable', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
-            'required' => true,
-            'choices' => MaterielTypeEnum::getAvailableTableTypes(),
-            'choices_as_values' => true,
-            'choice_label' => function($choice) {
-                return MaterielTypeEnum::getTypeName($choice);
-            },
-        ))
+        $builder
             ->add('nbtable')
             ->add('nbchaise')
             ->add('typesalle', 'Symfony\Component\Form\Extension\Core\Type\ChoiceType', array(
@@ -41,8 +34,6 @@ class MaterielType extends AbstractType
                 return MaterielTypeEnum::getTypeName($choice);
             },
         ))
-
-            ->add('datemateriel')
             ->add('save',SubmitType::class);
 
     }/**

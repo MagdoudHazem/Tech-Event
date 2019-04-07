@@ -24,7 +24,7 @@ class Materiel
     /**
      * @var string
      *
-     * @ORM\Column(name="typetable", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Stock")
      */
     private $typetable;
 
@@ -69,8 +69,6 @@ class Materiel
     {
         $this->datemateriel = new DateTime('now');
     }
-
-
     /**
      * Get id
      *

@@ -7,6 +7,7 @@
         <td>     typesalle    </td>
         <td>     typelumiere    </td>
         <td>     date    </td>
+        <td>prix</td>
     </tr>
 
 
@@ -14,18 +15,19 @@
     {% for v in enseignants %}
         <tr>
             <td>{{ v.id }}</td>
-            <td>{{ v.typetable }}</td>
+            <td>{% if v.typetable is empty %} pas de table {% else %} {{ v.typetable.type }} {% endif %}</td>
             <td>{{ v.nbtable }}</td>
             <td>{{ v.nbchaise }}</td>
             <td>{{ v.typesalle}}</td>
             <td>{{ v.typelumiere }}</td>
            <td> {% if v.datemateriel %}{{ v.datemateriel|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <td>{{ v.nbtable * v.typetable.prix }}</td>
 
 
-            <td><a href="{{ path ('update',{"id":v.id}) }}">Modifier</a></td>
-            <td><a href="{{ path ('delete',{"id":v.id}) }}">Supprimer</a></td>
+            <td><a href="{{ path ('updatemateriel',{"id":v.id}) }}">Modifier</a></td>
+            <td><a href="{{ path ('deletemateriel',{"id":v.id}) }}">Supprimer</a></td>
         </tr>
     {% endfor %}
 </table>
 
-<a href="{{ path('ajout') }}">Ajouter</a>
+<a href="{{ path('ajoutmateriel') }}">Ajouter</a>

@@ -1,2 +1,18 @@
-{{ form(form) }}
+{% extends '@Template/Default/layout.html.twig' %}
 
+{% block content %}
+{% if error is defined %}
+<div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+
+{{ form_start(form) }}
+<label for="">Type table</label>
+<select name="table" class="form-control">
+    <option value=""></option>
+    {% for t in tables %}
+        <option value="{{ t.id }}">{{ t.type }}</option>
+    {% endfor %}
+</select>
+{{ form_end(form) }}
+
+{% endblock %}

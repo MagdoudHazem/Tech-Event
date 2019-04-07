@@ -1,23 +1,44 @@
 
 
-ajout:
+ajoutmateriel:
     path: /ajouter
     defaults: { _controller: MaterielBundle:Materiel:ajouter }
 
 
 
-affiche:
+affichemateriel:
     path:     /afficher
     defaults: { _controller: MaterielBundle:Materiel:afficher }
 
-delete:
+deletemateriel:
     path:     /delete/{id}
     defaults: { _controller: MaterielBundle:Materiel:delete }
 
-update:
+updatemateriel:
     path:     /update/{id}
     defaults: { _controller: MaterielBundle:Materiel:update }
 
-recherche:
+recherchemateriel:
     path: /recherche
     defaults: { _controller: MaterielBundle:Materiel:rechercher }
+
+
+ajouterstock:
+    path: /ajouterstock
+    defaults: { _controller: MaterielBundle:Stock:ajouter }
+
+afficherstock:
+    path: /afficherstock
+    defaults: { _controller: MaterielBundle:Stock:afficher }
+
+deletestock:
+    path:     /deletestock/{id}
+    defaults: { _controller: MaterielBundle:Stock:delete }
+
+showupdatestock:
+    path:     /showupdatestock/{id}
+    defaults: { _controller: MaterielBundle:Stock:showupdate }
+
+updatestock:
+    path:     /updatestock/{id}
+    defaults: { _controller: MaterielBundle:Stock:update }

@@ -1,0 +1,12 @@
+{% extends '@Template/Default/layout.html.twig' %}
+
+
+{% block content %}
+    <form action="{{ path('updatestock',{'id':table.id}) }}">
+        <div class="form-group">
+            <label for="">Quantité</label>
+            <input type="number" class="form-control" name="quantite">
+        </div>
+        <button class="btn btn-primary" type="submit">Modifier</button>
+    </form>
+{% endblock %}
