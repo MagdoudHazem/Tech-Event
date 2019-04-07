@@ -1,0 +1,31 @@
+<table border="1">
+    <tr>
+        <td>id</td>
+        <td>typetable</td>
+        <td>nbtable</td>
+        <td>     nbchaise    </td>
+        <td>     typesalle    </td>
+        <td>     typelumiere    </td>
+        <td>     date    </td>
+    </tr>
+
+
+
+    {% for v in enseignants %}
+        <tr>
+            <td>{{ v.id }}</td>
+            <td>{{ v.typetable }}</td>
+            <td>{{ v.nbtable }}</td>
+            <td>{{ v.nbchaise }}</td>
+            <td>{{ v.typesalle}}</td>
+            <td>{{ v.typelumiere }}</td>
+           <td> {% if v.datemateriel %}{{ v.datemateriel|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+
+            <td><a href="{{ path ('update',{"id":v.id}) }}">Modifier</a></td>
+            <td><a href="{{ path ('delete',{"id":v.id}) }}">Supprimer</a></td>
+        </tr>
+    {% endfor %}
+</table>
+
+<a href="{{ path('ajout') }}">Ajouter</a>

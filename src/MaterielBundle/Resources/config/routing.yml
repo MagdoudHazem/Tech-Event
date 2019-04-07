@@ -1,0 +1,23 @@
+
+
+ajout:
+    path: /ajouter
+    defaults: { _controller: MaterielBundle:Materiel:ajouter }
+
+
+
+affiche:
+    path:     /afficher
+    defaults: { _controller: MaterielBundle:Materiel:afficher }
+
+delete:
+    path:     /delete/{id}
+    defaults: { _controller: MaterielBundle:Materiel:delete }
+
+update:
+    path:     /update/{id}
+    defaults: { _controller: MaterielBundle:Materiel:update }
+
+recherche:
+    path: /recherche
+    defaults: { _controller: MaterielBundle:Materiel:rechercher }

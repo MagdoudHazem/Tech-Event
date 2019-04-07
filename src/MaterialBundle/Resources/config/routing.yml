@@ -1,0 +1,17 @@
+material_material:
+    resource: "@MaterialBundle/Resources/config/routing/material.yml"
+    prefix:   /
+
+material_homepage:
+    path:     /
+    defaults: { _controller: MaterialBundle:Default:index }
+
+
+materi_new:
+    path: /
+    defaults: { _controller: MaterialBundle:Materiel:new}
+
+material_new:
+    path:     /new
+    defaults: { _controller: "MaterialBundle:Material:new" }
+    methods:  [GET, POST]

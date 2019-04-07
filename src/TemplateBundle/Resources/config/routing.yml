@@ -1,0 +1,30 @@
+template_homepage:
+    path:     /
+    defaults: { _controller: TemplateBundle:Default:index }
+
+template_gallerie:
+    path:     /gallerie
+    defaults: { _controller: TemplateBundle:Default:gallerie}
+
+about:
+    path:     /about
+    defaults: { _controller: TemplateBundle:Default:about}
+
+blog:
+    path:     /blog
+    defaults: { _controller: TemplateBundle:Default:blog}
+
+event:
+    path:     /event
+    defaults: { _controller: TemplateBundle:Default:event}
+contact:
+    path:     /contact
+    defaults: { _controller: TemplateBundle:Default:contact}
+
+detail:
+    path:     /detail
+    defaults: { _controller: TemplateBundle:Default:detail}
+
+booking:
+    path:     /booking
+    defaults: { _controller: TemplateBundle:Default:booking}
